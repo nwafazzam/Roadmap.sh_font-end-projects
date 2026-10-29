@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "reviews"
+        "footer"
+    ;
+    min-height: 100vh;
+}
+
+/* header section */
+
+header {
+    grid-area: header;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.title-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+/* header section */
+
+/* main section */
+.middle-container {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: black;
+    gap: 1px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.middle-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#projects-section,
+#work-section,
+#education-section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#projects-section ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#projects-section ul li {
+    padding: 12px 15px;
+    border-bottom: 1px solid black;
+}
+
+#projects-section ul li:last-child {
+    border-bottom: none;
+}
+
+#work-section {
+    background-color: black;
+    gap: 1px;
+}
+
+.work-block {
+    background-color: white;
+    flex: 1;
+    padding-bottom: 15px;
+}
+
+#education-section ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#education-section ul li {
+    padding: 2px 0px 0px 10px;
+}
+
+#education-section ul li:last-child {
+    padding-bottom: 10px;
+}
+
+#education-section ul li::before {
+    content: "-";
+    margin-right: 3px;
+}
+
+.pad {
+    padding: 5px 15px;
+    display: block;
+}
+
+.pad-link {
+    padding: 5px 15px;
+    display: inline-block;
+    color: #0066cc;
+}
+
+/* main section */
+
+/* reviews section */
+
+#reviews-section {
+    grid-area: reviews;
+    padding: 40px 0 0 0;
+}
+
+#reviews-section>h3 {
+    text-align: left;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+#reviews-section>div {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 24px;
+}
+
+.article-card {
+    border: 1px solid black;
+    padding: 24px;
+    border-radius: 12px;
+    /* زوايا ناعمة مطابقة تماماً للتصميم */
+    width: 300px;
+}
+
+/* reviews section */
+
+/* footer section */
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    font-size: x-large;
+}
+
+/* footer section */
+
+h3 {
+    font-size: 1.5rem;
+    padding: 15px 15px 5px 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    padding: 10px 15px 5px 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 5px;
+    font-size: 2.2rem;
+}
+
+/* project main */
+
+/* تنسيق صفحة المشاريع الرئيسي - الشاشات الكبيرة */
+#project-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* تقسيم المساحة إلى 3 أعمدة متساوية */
+    grid-template-rows: repeat(2, auto);
+    /* إنشاء صفين لاحتواء البطاقات الصغيره */
+    grid-auto-flow: column;
+    /* توجيه العناصر لترتيب نفسها عمودياً داخل الأعمدة أولاً */
+    gap: 24px;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* التحكم بالمشروع الأوسط ليمتد على الصفين معاً */
+#theMideArticle {
+    grid-row: span 2;
+    height: 100%;
+}
+
+/* تنسيق موحد لبطاقات المشاريع */
+.project-card {
+    border: 1px solid black;
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card h3 {
+    padding: 0;
+}
+
+.project-card p {
+    padding: 0;
+    flex-grow: 1;
+    /* دفع الروابط والـ Buttons إلى أسفل البطاقة دائماً لتوحيد المظهر */
+}
+
+/* project main */
+
+/* article main */
+
+#article-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+    padding: 40px 20px;
+}
+
+#mainArticle {
+    grid-row: span 5;
+    grid-column: 1/2;
+}
+
+#article-main>article {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* article main */
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav>ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .middle-container {
+        grid-template-columns: 1fr;
+    }
+
+    #work-section {
+        flex-direction: column;
+    }
+
+    .article-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .title-div {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 30px;
+        font-size: large;
+    }
+
+    #projects-section {
+        text-align: center;
+    }
+
+    #projects-section>h3 {
+        border-bottom: 1px solid black;
+        padding-bottom: 15px;
+    }
+
+    nav>div {
+        flex-direction: column;
+    }
+
+    #project-main {
+        grid-template-columns: 1fr;
+        /* عمود واحد فقط يضم كل المشاريع تحت بعضها */
+        grid-template-rows: auto;
+        /* إلغاء الصفين الثابتين */
+        grid-auto-flow: row;
+        /* إعادة الترتيب ليكون صفاً تلو الآخر بشكل طبيعي */
+        gap: 16px;
+        padding: 20px 10px;
+    }
+
+    #theMideArticle {
+        grid-row: span 1;
+        /* إلغاء امتداد الصفين ليتصرف كبطاقة عادية في الموبايل */
+    }
+
+    #article-main {
+        grid-template-columns: 1fr;
+    }
+
+    #mainArticle {
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
+
+/* Media Queries */

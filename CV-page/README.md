@@ -15,9 +15,4 @@ index the page properly.
 
 ## Links
 
-- **Live preview: [View live CV](https://nwafazzam.github.io/Single-Page-CV/)
-
-- Roadmap.sh project: [project URL!](https://roadmap.sh/projects/single-page-cv)
-
-- GitHub Repository: [Source Code](https://github.com/nwafazzam/Single-Page-CV)
-<!-- the <a href="https://roadmap.sh/projects/single-page-cv"> project URL! </a> -->
+- Roadmap.sh project: [project URL!](https://github.com/nwafazzam/Roadmap.sh_font-end-projects/tree/main/CV-page)
