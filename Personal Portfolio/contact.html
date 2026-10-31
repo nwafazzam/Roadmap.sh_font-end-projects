@@ -29,18 +29,27 @@
         </div>
     </header>
 
-    <main>
+    <main id="contact-main">
+        <h3>Contact us</h3>
         <form>
-            <div>
-                <label> user </label>
-                <input type="text">
+            <div id="left-column">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
             </div>
-            <br>
-            <div>
-                <label> password </label>
-                <input type="password">
+
+            <div id="right-column">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="What do you need?" required></textarea>
             </div>
-            <input type="submit">
+
+            <button type="submit" id="submitBtn">Send Message</button>
         </form>
     </main>
 

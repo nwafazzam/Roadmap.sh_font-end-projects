@@ -264,6 +264,101 @@ h1 {
 
 /* article main */
 
+/* contact main */
+
+#contact-main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-main h3 {
+    width: 100%;
+    max-width: 1000px; /* نفس عرض الفورم تماماً */
+    text-align: left;    /* محاذاة النص لليسار ليطابق بداية الإطار العلوي */
+    margin-bottom: 10px; /* مسافة بسيطة بين العنوان والإطار */
+    padding: 0;          /* إزالة أي حشو زائد قد يزيح العنوان */
+}
+
+#contact-main form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    position: relative;
+    /* ضروري جداً لتمرير العناصر الوهمية بناءً عليه */
+    padding: 30px;
+}
+
+/* 1. رسم الحد الأيسر كاملاً + الحد العلوي ممتداً من اليسار إلى النصف (50%) */
+#contact-main form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    pointer-events: none;
+    border-top-left-radius: 12px;
+}
+
+#contact-main form::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom-right-radius: 12px;
+    pointer-events: none;
+}
+
+#submitBtn {
+    grid-column: span 2;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input,
+textarea {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#left-column div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* contact main */
+
 /* Media Queries */
 
 @media (max-width: 768px) {
@@ -337,6 +432,33 @@ h1 {
     #mainArticle {
         grid-row: auto;
         grid-column: auto;
+    }
+
+    #contact-main form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        max-width: 100%;
+
+        /* إلغاء الحدود الجزئية وتطبيق إطار كامل وطبيعي للفورم */
+        border: 1px solid black;
+        border-radius: 12px;
+    }
+
+    /* إخفاء الحدود الفنية الخاصة بالشاشات الكبيرة تماماً في الموبايل */
+    #contact-main form::before,
+    #contact-main form::after {
+        display: none;
+    }
+
+    /* جعل زر الإرسال يتكيف بعرض مناسب ومريح للشاشات الصغيرة */
+    #submitBtn {
+        grid-column: span 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #contact-main {
+        padding: 20px 10px;
     }
 }
 
