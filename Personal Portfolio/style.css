@@ -243,6 +243,19 @@ h1 {
 
 /* article main */
 
+article h4 {
+    padding: 0px 0px 5px 0px;
+}
+
+.article-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    display: block;
+}
+
 #article-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -384,6 +397,10 @@ label {
     .article-card {
         width: 100%;
         max-width: 350px;
+    }
+
+    .article-img {
+        display: none;
     }
 
     .title-div {
